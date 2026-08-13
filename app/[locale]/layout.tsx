@@ -6,13 +6,16 @@ import "../[locale]/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Cairo } from "next/font/google";
+import { Metadata } from "next";
 
 const cairo = Cairo({
   subsets: ["latin", "arabic"],
   variable: "--font-cairo",
   display: "swap",
 });
-
+export const metadata: Metadata = {
+  title: "MoviesBase",
+};
 export default async function LocaleLayout({
   children,
   params,
