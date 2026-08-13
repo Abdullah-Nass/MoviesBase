@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Home",
+    "search": "Search"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search movies...",
+    "results": "Results for \"{query}\"",
+    "not_found": "No movies found matching your search."
+  },
+  "top_rated": {
+    "title": "Top Movies",
+    "subtitle": "The highest-rated movies",
+    "sidetitle": "Highest Rated",
+    "not_found": "No top rated movies found."
+  },
+  "discover": {
+    "title": "Discover Movies",
+    "subtitle": "Discover the most popular movies this week.",
+    "sidetitle": "Explore",
+    "not_found": "No movies to discover found."
+  },
+  "trending": {
+    "title": "Trending Today",
+    "subtitle": "The movies everyone is watching right now.",
+    "sidetitle": "What's Hot",
+    "not_found": "No trending movies found right now."
+  },
+  "genre": {
+    "title": "{genre} Movies",
+    "subtitle": "Discover {genre} movies",
+    "not_found": "No {genre} movies found right now."
+  },
+  "common": {
+    "noImage": "No Image",
+    "n_a": "N/A",
+    "loading": "Loading...",
+    "go_home": "Go Home",
+    "page_count": "Page {current} of {total}",
+    "show_all": "Show All",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "movie": {
+    "no_overview": "No overview is available for this title yet.",
+    "votes": "votes",
+    "release_date_n_a": "Release date unavailable",
+    "runtime": "{hour}h {minutes}m",
+    "details_title": "Movie Details",
+    "release_date": "Release Date",
+    "runtime_title": "Runtime",
+    "original_lang": "Original Language",
+    "popularity": "Popularity"
+  },
+  "footer": {
+    "explore": "Explore",
+    "tech_stack": "Powered By",
+    "rights": "All rights reserved."
+  },
+  "metadata": {
+    "pagination": "Movies pagination",
+
+    "main_nav": "Main navigation",
+    "select_language": "Select Language",
+    "toggle_sidebar": "Toggle sidebar",
+    "description": "Your localized hub for exploring popular movies, top ratings, and diverse genres worldwide."
+  }
+}

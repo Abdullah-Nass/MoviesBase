@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "search": "Buscar"
+  },
+  "search": {
+    "title": "Buscar",
+    "placeholder": "Buscar películas...",
+    "results": "Resultados para \"{query}\"",
+    "not_found": "No se encontraron películas que coincidan con tu búsqueda."
+  },
+  "top_rated": {
+    "title": "Mejores películas",
+    "subtitle": "Las películas con mejor calificación",
+    "sidetitle": "Mejor calificadas",
+    "not_found": "No se encontraron películas mejor calificadas."
+  },
+  "discover": {
+    "title": "Descubrir películas",
+    "subtitle": "Descubre las películas más populares de esta semana.",
+    "sidetitle": "Explorar",
+    "not_found": "No se encontraron películas para descubrir."
+  },
+  "trending": {
+    "title": "Tendencias de hoy",
+    "subtitle": "Las películas que todos están viendo ahora mismo.",
+    "sidetitle": "Lo más popular",
+    "not_found": "No se encontraron películas en tendencia en este momento."
+  },
+  "genre": {
+    "title": "Películas de {genre}",
+    "subtitle": "Descubre películas de {genre}",
+    "not_found": "No se encontraron películas de {genre} en este momento."
+  },
+  "common": {
+    "noImage": "Sin imagen",
+    "n_a": "N/D",
+    "loading": "Cargando...",
+    "go_home": "Ir al inicio",
+    "page_count": "Página {current} de {total}",
+    "show_all": "Mostrar todo",
+    "previous": "Anterior",
+    "next": "Siguiente"
+  },
+  "movie": {
+    "no_overview": "Aún no hay una sinopsis disponible para este título.",
+    "votes": "votos",
+    "release_date_n_a": "Fecha de estreno no disponible",
+    "runtime": "{hour}h {minutes}m",
+    "details_title": "Detalles de la película",
+    "release_date": "Fecha de estreno",
+    "runtime_title": "Duración",
+    "original_lang": "Idioma original",
+    "popularity": "Popularidad"
+  },
+  "footer": {
+    "explore": "Explorar",
+    "tech_stack": "Desarrollado por",
+    "rights": "Todos los derechos reservados."
+  },
+  "metadata": {
+    "pagination": "Paginación de películas",
+    "main_nav": "Navegación principal",
+    "select_language": "Seleccionar idioma",
+    "toggle_sidebar": "Alternar barra lateral",
+    "description": "Tu centro localizado para explorar películas populares, las mejores calificaciones y diversos géneros de todo el mundo."
+  }
+}
