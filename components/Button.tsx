@@ -17,7 +17,7 @@ export default function Button({
     <div className="mt-6 flex justify-center">
       <Link
         href={`/${locale}/${path}`}
-        className="group inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 transition-colors hover:text-emerald-700"
+        className="group inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 transition-colors hover:text-emerald-700 whitespace-nowrap"
       >
         <span>{content}</span>
 
