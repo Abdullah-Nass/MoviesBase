@@ -19,7 +19,7 @@ export default function ShowCard({ movie }: { movie: movieType }) {
     : t("movie.release_date_n_a");
   return (
     <article className="group overflow-hidden bg-neutral-950 rounded-lg border border-neutral-800 shadow-sm transition duration-300 hover:border-neutral-900 hover:shadow-xl">
-      <Link href={`${locale}/movie/${movie.id}`}>
+      <Link href={`/movie/${movie.id}`}>
         <div className="relative aspect-video overflow-hidden bg-neutral-950">
           {movie.backdrop_path ? (
             <Image
