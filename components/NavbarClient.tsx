@@ -17,8 +17,10 @@ export default function Navbar({
   genres: Genre[];
 }) {
   const t = useTranslations();
-  const [sidebar, setSidebar] = useState<boolean>(false);
-
+  const [menu, setMenu] = useState<boolean>(false);
+  const handleCloseMenu = () => {
+    setMenu(false);
+  };
   return (
     <nav
       aria-label={t("metadata.main_nav")}
@@ -29,11 +31,11 @@ export default function Navbar({
           <button
             type="button"
             onClick={() => {
-              setSidebar((prev) => !prev);
+              setMenu((prev) => !prev);
             }}
             className="cursor-pointer -ml-2 rounded-md bg-transparent text-xl text-neutral-300 transition-colors active:scale-95 hover:text-white focus:outline-none"
             aria-label={t("metadata.toggle_sidebar")}
-            aria-expanded={sidebar}
+            aria-expanded={menu}
             aria-controls="navbar-menu"
           >
             <FontAwesomeIcon icon={faBars} />
@@ -55,13 +57,14 @@ export default function Navbar({
 
       <div
         id="navbar-menu"
-        className={`grid overflow-hidden bg-neutral-900/30 transition-[grid-template-rows] duration-300 ${sidebar ? "grid-rows-[1fr] border-t border-neutral-800" : "grid-rows-[0fr]"}`}
+        className={`grid overflow-hidden bg-neutral-900/30 transition-[grid-template-rows] duration-300 ${menu ? "grid-rows-[1fr] border-t border-neutral-800" : "grid-rows-[0fr]"}`}
       >
         <div className="container mx-auto px-6 sm:px-8 lg:px-10 grid grid-cols-1 lg:grid-cols-3 min-h-0">
           <ul className="col-span-1 flex flex-wrap items-center justify-center lg:justify-start gap-6 py-5">
             <li className="shrink-0">
               <Link
                 href={`/${locale}/trending`}
+                onClick={handleCloseMenu}
                 className="block text-sm font-medium text-gray-300 transition-colors hover:text-emerald-400"
               >
                 {t("trending.title")}
@@ -70,6 +73,7 @@ export default function Navbar({
             <li className="shrink-0">
               <Link
                 href={`/${locale}/top_rated`}
+                onClick={handleCloseMenu}
                 className="block text-sm font-medium text-gray-300 transition-colors hover:text-emerald-400"
               >
                 {t("top_rated.title")}
@@ -78,6 +82,7 @@ export default function Navbar({
             <li className="shrink-0">
               <Link
                 href={`/${locale}/discover`}
+                onClick={handleCloseMenu}
                 className="block text-sm font-medium text-gray-300 transition-colors hover:text-emerald-400"
               >
                 {t("discover.title")}
@@ -89,6 +94,7 @@ export default function Navbar({
               <li key={g.id}>
                 <Link
                   href={`/${locale}/discover/${g.id}`}
+                  onClick={handleCloseMenu}
                   className="block truncate text-center rounded-full border border-white/5 bg-white/10 px-4 py-1.5 text-sm font-medium text-gray-200 backdrop-blur-sm transition-all hover:border-emerald-500/30 hover:bg-emerald-500/20 hover:text-emerald-400"
                 >
                   {g.name}
