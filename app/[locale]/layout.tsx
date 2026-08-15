@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Cairo } from "next/font/google";
 import { Metadata } from "next";
+import TanstackProvider from "@/components/tanstack-provider";
 
 const cairo = Cairo({
   subsets: ["latin", "arabic"],
@@ -34,11 +35,13 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body className={`${cairo.className} antialiased`}>
-        <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          {children}
-          <Footer />
-        </NextIntlClientProvider>
+        <TanstackProvider>
+          <NextIntlClientProvider messages={messages}>
+            <Navbar />
+            {children}
+            <Footer />
+          </NextIntlClientProvider>
+        </TanstackProvider>
       </body>
     </html>
   );

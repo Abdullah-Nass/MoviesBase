@@ -49,7 +49,7 @@ export default function Navbar({
           </Link>
         </div>
 
-        <div className="flex min-w-0 flex-1 items-center gap-7">
+        <div className="flex min-w-0 flex-1 items-center gap-3 sm:gap-7">
           <LanguageSwitcher />
           <Search />
         </div>
