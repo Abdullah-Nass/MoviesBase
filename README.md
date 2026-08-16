@@ -27,6 +27,7 @@ MoviesBase is a movie discovery app built with Next.js, TypeScript, Tailwind CSS
 - Axios
 - TMDB API
 - Font Awesome icons
+- Vitest + React Testing Library
 
 ## Routes
 
@@ -81,6 +82,7 @@ npm run dev
 npm run build
 npm run start
 npm run lint
+npm test
 ```
 
 ## Project Structure
@@ -94,6 +96,7 @@ i18n/                    next-intl routing and request config
 lib/tmdb.ts              Server-side TMDB API helpers
 lib/tmdb-client.ts       Client-side fetch wrapper for TanStack Query
 messages/                Translation files
+tests/                   Vitest + React Testing Library test files
 types/                   TMDB TypeScript types
 ```
 
@@ -110,6 +113,7 @@ types/                   TMDB TypeScript types
 - API error handling and fallback rendering
 - Locale-aware links and redirects
 - Reusable component design
+- Unit and component testing with Vitest and React Testing Library
 - Production build and lint checks
 
 ## Search Architecture
@@ -118,6 +122,17 @@ The search feature has two layers:
 
 - **Search results page** (`/[locale]/search?q=...`) — server-side fetch with pagination, no client state
 - **Live search dropdown** — client component using TanStack Query with a 400ms debounce hook; queries hit `/api/search`, results are cached by query key for 5 minutes, and the dropdown supports full keyboard navigation
+
+## Testing
+
+Tests are written with **Vitest** and **React Testing Library**, using a shared `renderWithProviders` utility that wraps components with `NextIntlClientProvider` and `QueryClientProvider`.
+
+Coverage includes:
+
+- `getPage` — unit tests for all valid and invalid input cases
+- `Button` — renders correct text, locale-aware href, and icon
+- `Pagination` — conditional link/span rendering, correct URL construction with and without query params
+- `Search` — input rendering, form submission and navigation, empty input guard, async dropdown results with mocked TanStack Query, and dropdown link hrefs using `userEvent` and `waitFor`
 
 ## API
 
