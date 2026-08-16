@@ -101,7 +101,7 @@ export default function Search() {
         </button>
       </form>
 
-      {query.trim().length > 1 && (
+      {debouncedQuery.trim().length > 1 && (
         <div className="absolute top-full z-50 mt-1 w-full rounded-md border border-neutral-800 bg-neutral-900 shadow-lg">
           {isFetching ? (
             <div className="flex items-center justify-center p-4">
