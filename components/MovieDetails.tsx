@@ -11,7 +11,7 @@ export default function MovieDetails({ movie }: { movie: movieType }) {
   const runtime_m = movie.runtime % 60;
   const runtime = movie.runtime
     ? t("movie.runtime", { hour: runtime_h, minutes: runtime_m })
-    : t("n_a");
+    : t("common.n_a");
   const releaseDate = movie.release_date ? new Date(movie.release_date) : null;
   const formattedDate = releaseDate
     ? releaseDate.toLocaleDateString(locale, {
