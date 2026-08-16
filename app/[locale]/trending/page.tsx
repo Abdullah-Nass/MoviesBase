@@ -3,18 +3,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import Section from "@/components/Section";
 import Pagination from "@/components/Pagination";
 import Button from "@/components/Button";
-
-// For parsing page number incase it returns [2, 5] : page=2&page=5
-function getPage(value: string | string[] | undefined) {
-  const rawPage = Array.isArray(value) ? value[0] : value;
-  const page = Number(rawPage);
-
-  if (!Number.isInteger(page) || page < 1) {
-    return 1;
-  }
-
-  return page;
-}
+import getPage from "@/lib/getPage";
 
 export default async function TrendingPage({
   searchParams,
@@ -46,18 +35,19 @@ export default async function TrendingPage({
         {movies ? (
           <Section movies={movies.results} />
         ) : (
-          <div className="text-center text-lg text-red-500">
-            {t("trending.not_found")}
-          </div>
+          <>
+            <div className="text-center text-lg text-red-500">
+              {t("trending.not_found")}
+            </div>
+            <Button content={t("common.go_home")} path="/" direction="back" />
+          </>
         )}
-        {totalPages > 1 ? (
+        {totalPages > 1 && (
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
             path="trending"
           />
-        ) : (
-          <Button content={t("common.go_home")} path="/" direction="back" />
         )}
       </section>
     </main>

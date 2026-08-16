@@ -3,18 +3,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import Pagination from "@/components/Pagination";
-
-// For parsing page number incase it returns [2, 5] : page=2&page=5
-function getPage(value: string | string[] | undefined) {
-  const rawPage = Array.isArray(value) ? value[0] : value;
-  const page = Number(rawPage);
-
-  if (!Number.isInteger(page) || page < 1) {
-    return 1;
-  }
-
-  return page;
-}
+import getPage from "@/lib/getPage";
 
 export default async function TopRatedPage({
   searchParams,
@@ -46,18 +35,20 @@ export default async function TopRatedPage({
         {movies ? (
           <Section movies={movies.results} />
         ) : (
-          <div className="text-center text-lg text-red-500">
-            {t("top_rated.not_found")}
-          </div>
+          <>
+            <div className="text-center text-lg text-red-500">
+              {t("top_rated.not_found")}
+            </div>
+
+            <Button content={t("common.go_home")} path="/" direction="back" />
+          </>
         )}
-        {totalPages ? (
+        {totalPages && (
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
             path="top_rated"
           />
-        ) : (
-          <Button content={t("common.go_home")} path="/" direction="back" />
         )}
       </section>
     </main>
