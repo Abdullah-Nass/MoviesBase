@@ -13,114 +13,112 @@ export default async function Home() {
   ]);
 
   return (
-    <>
-      <main className="min-h-screen bg-neutral-950 text-white">
-        {trendingMovies ? (
-          <section className="relative overflow-hidden">
-            <div className="pointer-events-none absolute -start-40 top-20 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
+    <main className="min-h-screen bg-neutral-950 text-white">
+      {trendingMovies ? (
+        <section className="relative overflow-hidden">
+          <div className="pointer-events-none absolute -start-40 top-20 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
 
-            <div className="relative container mx-auto px-6 py-14 sm:px-8 lg:px-10">
-              <div className="mb-8 flex items-end justify-between gap-4">
-                <div>
-                  <div className="mb-3 flex items-center gap-3">
-                    <span className="h-1 w-8 rounded-full bg-emerald-500 " />
+          <div className="relative container mx-auto px-6 py-14 sm:px-8 lg:px-10">
+            <div className="mb-8 flex items-end justify-between gap-4">
+              <div>
+                <div className="mb-3 flex items-center gap-3">
+                  <span className="h-1 w-8 rounded-full bg-emerald-500 " />
 
-                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-500">
-                      {t("trending.sidetitle")}
-                    </span>
-                  </div>
-                  <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                    {t("trending.title")}
-                  </h1>
-
-                  <p className="mt-2 text-sm text-neutral-500">
-                    {t("trending.subtitle")}
-                  </p>
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-500">
+                    {t("trending.sidetitle")}
+                  </span>
                 </div>
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                  {t("trending.title")}
+                </h1>
 
-                <Button content={t("common.show_all")} path="/trending" />
+                <p className="mt-2 text-sm text-neutral-500">
+                  {t("trending.subtitle")}
+                </p>
               </div>
 
-              <Section movies={trendingMovies.results.slice(0, 4) ?? null} />
+              <Button content={t("common.show_all")} path="/trending" />
             </div>
-          </section>
-        ) : (
-          <div className="flex min-h-64 items-center justify-center text-lg text-red-500">
-            {t("trending.not_found")}
+
+            <Section movies={trendingMovies.results.slice(0, 4) ?? null} />
           </div>
-        )}
-        {topRatedMovies ? (
-          <section className="relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/80 to-neutral-900/90" />
-            <div className="pointer-events-none absolute -end-40 top-20 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
+        </section>
+      ) : (
+        <div className="flex min-h-64 items-center justify-center text-lg text-red-500">
+          {t("trending.not_found")}
+        </div>
+      )}
+      {topRatedMovies ? (
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/80 to-neutral-900/90" />
+          <div className="pointer-events-none absolute -end-40 top-20 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
 
-            <div className="relative container mx-auto px-6 py-14 sm:px-8 lg:px-10">
-              <div className="mb-8 flex items-end justify-between gap-4">
-                <div>
-                  <div className="mb-3 flex items-center gap-3">
-                    <span className="h-1 w-8 rounded-full bg-emerald-500" />
+          <div className="relative container mx-auto px-6 py-14 sm:px-8 lg:px-10">
+            <div className="mb-8 flex items-end justify-between gap-4">
+              <div>
+                <div className="mb-3 flex items-center gap-3">
+                  <span className="h-1 w-8 rounded-full bg-emerald-500" />
 
-                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-500">
-                      {t("top_rated.sidetitle")}
-                    </span>
-                  </div>
-
-                  <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                    {t("top_rated.title")}
-                  </h1>
-
-                  <p className="mt-2 text-sm text-neutral-500">
-                    {t("top_rated.subtitle")}
-                  </p>
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-500">
+                    {t("top_rated.sidetitle")}
+                  </span>
                 </div>
 
-                <Button content={t("common.show_all")} path="/top_rated" />
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                  {t("top_rated.title")}
+                </h1>
+
+                <p className="mt-2 text-sm text-neutral-500">
+                  {t("top_rated.subtitle")}
+                </p>
               </div>
 
-              <Section movies={topRatedMovies.results.slice(0, 8)} />
+              <Button content={t("common.show_all")} path="/top_rated" />
             </div>
-          </section>
-        ) : (
-          <div className="flex min-h-64 items-center justify-center text-lg text-red-500">
-            {t("top_rated.not_found")}
+
+            <Section movies={topRatedMovies.results.slice(0, 8)} />
           </div>
-        )}
-        {discoverMovies ? (
-          <section className="relative overflow-hidden">
-            <div className="pointer-events-none absolute -start-40 top-20 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
+        </section>
+      ) : (
+        <div className="flex min-h-64 items-center justify-center text-lg text-red-500">
+          {t("top_rated.not_found")}
+        </div>
+      )}
+      {discoverMovies ? (
+        <section className="relative overflow-hidden">
+          <div className="pointer-events-none absolute -start-40 top-20 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
 
-            <div className="relative container mx-auto px-6 py-14 sm:px-8 lg:px-10">
-              <div className="mb-8 flex items-end justify-between gap-4">
-                <div>
-                  <div className="mb-3 flex items-center gap-3">
-                    <span className="h-1 w-8 rounded-full bg-emerald-500" />
+          <div className="relative container mx-auto px-6 py-14 sm:px-8 lg:px-10">
+            <div className="mb-8 flex items-end justify-between gap-4">
+              <div>
+                <div className="mb-3 flex items-center gap-3">
+                  <span className="h-1 w-8 rounded-full bg-emerald-500" />
 
-                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-500">
-                      {t("discover.sidetitle")}
-                    </span>
-                  </div>
-
-                  <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                    {t("discover.title")}
-                  </h1>
-
-                  <p className="mt-2 text-sm text-neutral-500">
-                    {t("discover.subtitle")}
-                  </p>
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-500">
+                    {t("discover.sidetitle")}
+                  </span>
                 </div>
 
-                <Button content={t("common.show_all")} path="/discover" />
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                  {t("discover.title")}
+                </h1>
+
+                <p className="mt-2 text-sm text-neutral-500">
+                  {t("discover.subtitle")}
+                </p>
               </div>
 
-              <Section movies={discoverMovies.results.slice(0, 8)} />
+              <Button content={t("common.show_all")} path="/discover" />
             </div>
-          </section>
-        ) : (
-          <div className="flex min-h-64 items-center justify-center text-lg text-red-500">
-            {t("discover.not_found")}
+
+            <Section movies={discoverMovies.results.slice(0, 8)} />
           </div>
-        )}
-      </main>
-    </>
+        </section>
+      ) : (
+        <div className="flex min-h-64 items-center justify-center text-lg text-red-500">
+          {t("discover.not_found")}
+        </div>
+      )}
+    </main>
   );
 }
