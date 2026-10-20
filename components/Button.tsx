@@ -1,7 +1,7 @@
+import { Link } from "@/i18n/routing";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocale } from "next-intl";
-import Link from "next/link";
 
 export default function Button({
   content,

@@ -1,5 +1,5 @@
+import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 
 export default function Pagination({
   currentPage,

@@ -1,7 +1,7 @@
 import { movieType } from "@/types/tmdb";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "../i18n/routing";
 
 export default function ShowCard({ movie }: { movie: movieType }) {
   const t = useTranslations();

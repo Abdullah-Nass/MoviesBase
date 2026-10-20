@@ -1,9 +1,9 @@
 "use client";
 import { useDebounce } from "@/hooks/useDebounce";
+import { Link } from "@/i18n/routing";
 import { searchMovies } from "@/lib/tmdb-client";
 import { useQuery } from "@tanstack/react-query";
 import { useLocale, useTranslations } from "next-intl";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 

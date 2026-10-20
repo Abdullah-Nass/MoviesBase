@@ -1,13 +1,13 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Search from "./Search";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Genre } from "@/types/tmdb";
+import { Link } from "@/i18n/routing";
 
 export default function Navbar({
   locale,
