@@ -42,7 +42,7 @@ export default function Navbar({
           </button>
 
           <Link
-            href={`/${locale}`}
+            href="/"
             className="text-xl font-bold tracking-wide text-emerald-600"
           >
             MOVIESBASE
